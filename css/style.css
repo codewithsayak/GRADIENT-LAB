@@ -347,3 +347,32 @@ pre { margin: 0; padding: 1rem; overflow-x: auto; font-family: var(--font-mono);
 }
 .toast.hidden { opacity: 0; transform: translateX(-50%) translateY(20px); pointer-events: none; }
 .hidden { display: none !important; }
+/* ==========================================================================
+   MOBILE LAYOUT FIXES (Must stay at the bottom of the file)
+   ========================================================================== */
+@media (max-width: 900px) {
+    .navbar {
+        flex-wrap: wrap !important;
+        padding: 0.75rem 1rem !important;
+    }
+    .nav-links {
+        display: none !important; /* Hides the text links on mobile to prevent stretching */
+    }
+    .workspace {
+        flex-direction: column !important;
+        overflow-y: auto !important;
+    }
+    .panel-left {
+        width: 100% !important;
+        border-right: none !important;
+        border-bottom: 1px solid var(--border-color);
+        flex: none !important;
+        height: auto !important;
+    }
+    .panel-right {
+        width: 100% !important;
+        flex: none !important;
+        padding: 1rem !important;
+        min-height: 600px;
+    }
+}
