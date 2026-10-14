@@ -543,11 +543,15 @@
 
     // Theme Handling
     function loadTheme() {
+    try {
         const savedTheme = localStorage.getItem(CONFIG.themeKey);
         if (savedTheme === 'light') {
             document.documentElement.setAttribute('data-theme', 'light');
         }
+    } catch(e) {
+        console.warn('LocalStorage access blocked by mobile browser.');
     }
+}
     
     function toggleTheme() {
         const isDark = document.documentElement.getAttribute('data-theme') === 'dark' || !document.documentElement.hasAttribute('data-theme');
